@@ -5,3 +5,8 @@ RUN volta install node yarn
 COPY . .
 
 RUN yarn install
+
+RUN apt update && \
+	apt install curl php-cli php-mbstring git unzip && \
+	curl -sS https://getcomposer.org/installer -o composer-setup.php
+
